@@ -31,6 +31,7 @@
 # default ls escape sequence looks something like this:
 #     ${lc}${type_code}${rc}FILENAME${lc}${no}${rc}
 #     if ec is defined: ${lc}${type_code}${rc}FILENAME${ec}
+# typecode is the color sequence that depends on the type or name of file
 
 # text attributes (applies to fg text)
 NON="00" # default/normal
@@ -102,7 +103,8 @@ COLORS=(
     "or NON BLK BCYN "             # orphaned link,    icon f839
     "bd NON LGRN CLC "             # block device,     icon f0c8
     "cd NON LGRN CLC "             # character device, icon f096
-    "pi NON LBRW CLC "             # pipe,             icon f1a8
+    "pi NON LBRW CLC ﳣ"             # pipe,             icon fce3
+    # "pi NON LBRW CLC "             # pipe,             icon f1a8
     "so NON LBRW CLC ﳦ"             # socket,           icon fce6
     "su NON BLK LBLU "             # setuid,           icon f007
     "sg NON BLK LBLU "             # setgid,           icon f0c0
@@ -121,6 +123,7 @@ COLORS=(
 
     # markdown
     "*.md NON YLW CLC "            # icon e609
+    "*.mkdn NON YLW CLC "          # icon e609
     "*.markdown NON YLW CLC "      # icon e609
 
     # binary files
@@ -163,6 +166,10 @@ COLORS=(
     "*.xlsx NON BGRN CLC "         # icon f1c3
     "*.vsdx NON BBLU CLC "         # icon f1c3
     "*.msg NON BBLU CLC "          # icon f6ee
+    "*.accdb NON BRED CLC "        # icon f472
+    "*.laccdb NON SGRY CLC "       # icon f023
+    "*.mfd NON YLW CLC "           # icon f279
+    "*.tmp NON SGRY CLC "          # icon f1b1
 
     # images
     "*.jpg NON PRPL CLC "          # icon f1c5
@@ -208,12 +215,13 @@ COLORS=(
 
     # file/folder name specific (requires special build of ls for folders)
     "*README.md BLD YLW CLC "      # icon e714
+    "*README.mkdn BLD YLW CLC "    # icon e714
     "*README-cn.md BLD YLW CLC "   # icon e714
     "*README BLD YLW CLC "         # icon e714
     "*LICENSE BLD YLW CLC "        # icon e714
     "*tags NON BGRN CLC "          # icon f02c
     "*PKG-INFO NON BGRN CLC "      # icon f05a
-    "*Makefile NON CYN CLC "      # icon f0ad
+    "*Makefile NON CYN CLC "       # icon f0ad
 )
 
 LSC=""
@@ -237,7 +245,10 @@ do
     fi
 done
 export LS_COLORS=""
+# export LS_COLORS="ec=\e[0m:rs=\e[0m:""$LSC"
 export LS_COLORS="$LSC"
+# export LS_COLORS="$LSC"
+# export LS_COLORS=$(ls_colors_generator)
 
 # format should be: <BG><COLOR><ATTR><FG><COLOR>
 # <BG><COLOR> can be ommitted (if ommitting omit both)
@@ -256,7 +267,7 @@ export LS_COLORS="$LSC"
 # echo -e "${LSC[*]}"
 
 # useage: `export LS_COLORS=$(gen_ls_colors.sh)`
-# limitations - without modifying ls.c need to use `-w$(expr $(tput cols) - 2)` in ls alias to handle the 2 extra characters (space and icon). Also, specific filenames or folders can't have a special color and/or icon.
+# limitations - without modifying ls.c need to use `-w$(expr $(tput cols) - 2)` in ls alias to handle the 2 extra characters (space and icon). Also, specific folders can't have a special color and/or icon.
 
 # possible bashrc settings:
 # source gen_ls_colors
