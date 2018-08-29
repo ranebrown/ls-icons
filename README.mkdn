@@ -4,6 +4,7 @@
 - Use the `print_ls_colors.sh` script to print each item in the LS_COLORS variable on its own line.
     - This made it easier to see specifc icons that were causing problems.
     - Using certain icons caused that type to print on the right side of the screen.
+    - **NOTE:** make sure to run this in a full screen terminal
 
 # How to create special file types
 ln: `ln -s source_file link_name`
