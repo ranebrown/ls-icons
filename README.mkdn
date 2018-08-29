@@ -1,3 +1,18 @@
+# Installation
+## Custom build of ls
+
+## Default ls
+If you don't want to go through the trouble of modifying `ls.c` and rebuilding `ls` then you can use the below alias in your `.bashrc`:
+```
+alias ls='ls --color=always --group-directories-first -N -w $(expr $(tput cols) - 18)'
+```
+
+The `-N` flag tells `ls` to not use quotes around names with spaces.
+The `-w $(...)` is used to set the column width.
+This is necessary since adding in icons adds extra characters that ls does not account for.
+Without this the output of `ls` can run off then end of the screen and wrap to the next line making things very ugly.
+The number 18 was picked as a value that works for me but feel free to adjust it based on your screen size and if you are using something like tmux.
+
 # Troubleshooting
 - Use `ls | less` to see ls output with escape sequences including what gets added by ls such as the lc,rc,ec items.
     - This can be useful to see if there are weird/extra escape sequences messing things up.
