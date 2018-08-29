@@ -39,3 +39,5 @@ Using SauceCodePro NF
 - ﴘ fd18
 - ﳦ fce6
 - ﳣ fce3
+- ﮷ fbb7
+- ﴬ fd2c
