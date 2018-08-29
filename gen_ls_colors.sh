@@ -148,9 +148,8 @@ COLORS=(
     "or NON BLK BCYN "             # orphaned link,    icon f839
     "bd NON LGRN CLC "             # block device,     icon f0c8
     "cd NON LGRN CLC "             # character device, icon f096
-    "pi NON LBRW CLC ﳣ"             # pipe,             icon fce3
-    # "pi NON LBRW CLC "             # pipe,             icon f1a8
-    "so NON LBRW CLC ﳦ"             # socket,           icon fce6
+    "pi NON LBRW CLC "             # pipe,             icon f1a8
+    "so NON LBRW CLC "             # socket,           icon f2da
     "su NON BLK LBLU "             # setuid,           icon f007
     "sg NON BLK LBLU "             # setgid,           icon f0c0
     "st NON GRN CLC "              # sticky,           icon f249
@@ -158,7 +157,7 @@ COLORS=(
     "tw NON GRN CLC "              # ow w/ sticky,     icon f14b
 
     # other special (haven't seen yet and couldn't figure out how to create)
-    "do BLD PRPL BWHT ﴘ"            # door,             icon fd18
+    "do BLD PRPL BWHT "            # door,             icon f7a8
     "ca BLD PRPL BWHT "            # capability,       icon e7ad
 
     # extensions
@@ -177,13 +176,13 @@ COLORS=(
     # source code
     "*.c NON GRY CLC "             # icon e61e
     "*.h NON GRY CLC "             # icon e61e
-    "*.cpp NON GRY CLC ﭱ"           # icon fb71
-    "*.hpp NON GRY CLC ﭱ"           # icon fb71
+    "*.cpp NON GRY CLC "           # icon e61d
+    "*.hpp NON GRY CLC "           # icon e61d
     "*.asm NON GRY CLC "           # icon e753
     "*.py NON GRY CLC "            # icon f820
     "*.pyc NON LGRY CLC "          # icon f81f
     "*.stackdump NON LGRY CLC "    # icon f6e4
-    "*.json NON GRY CLC ﬥ"          # icon fb25
+    "*.json NON GRY CLC "          # icon e60b
 
     # html
     "*.htm NON TAN CLC "           # icon e60e
@@ -215,8 +214,8 @@ COLORS=(
     "*.laccdb NON SGRY CLC "       # icon f023
     "*.mfd NON YLW CLC "           # icon f279
     "*.tmp NON SGRY CLC "          # icon f1b1
-    "*.one NON PRPL CLC ﱅ"          # icon fc45
-    "*.onetoc2 NON PRPL CLC ﱅ"      # icon fc45
+    "*.one NON PRPL CLC "          # icon f89d
+    "*.onetoc2 NON PRPL CLC "      # icon f89d
 
     # images
     "*.jpg NON PRPL CLC "          # icon f1c5
