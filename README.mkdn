@@ -16,3 +16,10 @@ tw: create directory then run `chmod +t,o+w dir_name`
 ## Unable to create
 do: ??? Solaris only
 ca: use `setcap` http://www.andy-pearce.com/blog/posts/2013/Mar/file-capabilities-in-linux/
+
+# Known Issues
+Certain icons seems to make the listing not display correctly ie large amount of whitespace and icon on the above line.
+Saw this using `"pi NON LBRW CLC ﳣ"` but changing to `"pi NON LBRW CLC "` fixed the problem.
+Adding extra files in the directory also sometimes changes/fixes the dispaly.
+Not sure what is going on with this.
+
