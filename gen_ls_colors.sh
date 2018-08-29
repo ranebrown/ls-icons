@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# to use 256 colors instead of true color set COLOR_256 to true
+COLOR_256=false
+
 # special type codes
 # no: Normal: non-filename text, global default (unset by default)
 # fi: File: normal file that doesn't have a color associated with it
@@ -31,57 +34,99 @@
 # default ls escape sequence looks something like this:
 #     ${lc}${type_code}${rc}FILENAME${lc}${no}${rc}
 #     if ec is defined: ${lc}${type_code}${rc}FILENAME${ec}
-# typecode is the color sequence that depends on the type or name of file
+# type_code is the color sequence that depends on the type or name of file
 
 # text attributes (applies to fg text)
-NON="00" # default/normal
-BLD="01" # bold
-UDS="04" # underline
-BLI="05" # blinking (requires terminal setting to be on)
-REV="07" # reversed (reverse FG and BG colors)
-CON="08" # concealed (hide text)
+NON="0" # default/normal
+BLD="1" # bold
+UDS="4" # underline
+BLI="5" # blinking (requires terminal setting to be on)
+REV="7" # reversed (reverse FG and BG colors)
+CON="8" # concealed (hide text)
 
 # foreground or background
-FG="033;38;2"
-BG="033;48;2"
+if [[ "$COLOR_256" == "true" ]]
+then
+    FG="38;5"
+    BG="48;5"
 
-# falcon terminal colors
-BLK="0;0;2"             # rgb(0,0,2)        =   #000002
-RED="255;64;0"          # rgb(255,64,0)     =   #ff4000
-GRN="89;128;51"         # rgb(89,128,51)    =   #598033
-YLW="255;191;0"         # rgb(255,191,0)    =   #ffbf00
-BLU="48;108;191"        # rgb(48,108,191)   =   #306cbf
-ORG="255;128;0"         # rgb(255,128,0)    =   #ff8000
-CYN="48;191;167"        # rgb(48,191,167)   =   #30bfa7
-GRY="212;212;217"       # rgb(212,212,217)  =   #d4d5d9
-BBLK="11;11;26"         # rgb(11,11,26)     =   #0b0b1a
-BRED="255;121;76"       # rgb(255,121,76)   =   #ff794c
-BGRN="133;166;99"       # rgb(133,166,99)   =   #85a663
-BYLW="255;217;102"      # rgb(255,217,102)  =   #ffd966
-BBLU="143;163;191"      # rgb(143,163,191)  =   #8fa3bf
-BORG="255;172;89"       # rgb(255,172,89)   =   #ffac59
-BCYN="133;204;192"      # rgb(133,204,192)  =   #85ccc0
-BWHT="253;253;255"      # rgb(253,253,255)  =   #fdfdff
+    # falcon terminal colors
+    BLK="10"
+    RED="20"
+    GRN="30"
+    YLW="40"
+    BLU="50"
+    ORG="60"
+    CYN="70"
+    GRY="90"
+    BBLK="110"
+    BRED="120"
+    BGRN="130"
+    BYLW="140"
+    BBLU="150"
+    BORG="160"
+    BCYN="170"
+    BWHT="180"
 
-# falcon standard colors (ones that are the same as terminal not repeated)
-SGRN="119;153;84"       # rgb(119,153,84)   =   #779954
-TAN="255;239;191"       # rgb(255,239,191)  =   #ffefbf
-LGRN="223;255;191"      # rgb(223,255,191)  =   #dfffbf
-LBLU="191;218;255"      # rgb(191,218,255)  =   #bfdaff
-LGRY="175;175;178"      # rgb(175,175,178)  =   #afafb2
-LLGRY="137;137;140"     # rgb(137,137,140)  =   #89898c
-MGRY="100;100;102"      # rgb(100,100,102)  =   #646466
-DGRY="62;62;64"         # rgb(62,62,64)     =   #3e3e40
-DDGRY="37;37;39"        # rgb(37,37,39)     =   #252527
+    # falcon standard colors (ones that are the same as terminal not repeated)
+    SGRN="190"
+    TAN="200"
+    LGRN="210"
+    LBLU="220"
+    LGRY="230"
+    LLGRY="5"
+    MGRY="15"
+    DGRY="25"
+    DDGRY="35"
 
-# falcon special colors
-PRPL="255;95;255"       # rgb(255,95,255)   =   #ff5fff
-BRWN="102;56;41"        # rgb(102,56,41)    =   #663829
-LBRW="102;87;41"        # rgb(102,87,41)    =   #665729
-DGRN="71;102;41"        # rgb(71,102,41)    =   #476629
-SGRY="128;128;128"      # rgb(128,128,128)  =   #808080
-SBLK="11;11;26"         # rgb(11,11,26)     =   #0b0b1a
+    # falcon special colors
+    PRPL="45"
+    BRWN="55"
+    LBRW="75"
+    DGRN="85"
+    SGRY="95"
+    SBLK="105"
+else
+    FG="38;2"
+    BG="48;2"
 
+    # falcon terminal colors
+    BLK="0;0;4"             # rgb(0,0,4)
+    RED="255;54;0"          # rgb(255,54,0)
+    GRN="113;142;63"        # rgb(113,142,63)
+    YLW="255;197;82"        # rgb(255,197,82)
+    BLU="99;81;150"         # rgb(99,81,150)
+    ORG="255;118;26"        # rgb(255,118,26)
+    CYN="52;191;164"        # rgb(52,191,164)
+    GRY="180;180;185"       # rgb(180,180,185)
+    BBLK="2;2;33"           # rgb(2,2,33)
+    BRED="255;142;120"      # rgb(255,142,120)
+    BGRN="177;191;117"      # rgb(177,191,117)
+    BYLW="255;211;146"      # rgb(255,211,146)
+    BBLU="153;164;188"      # rgb(153,164,188)
+    BORG="255;176;123"      # rgb(255,176,123)
+    BCYN="129;204;191"      # rgb(139,204,191)
+    BWHT="248;248;255"      # rgb(248,248,255)
+
+    # falcon standard colors (ones that are the same as terminal not repeated)
+    SGRN="119;153;84"       # rgb(119,153,84)   =   #779954
+    TAN="255;239;191"       # rgb(255,239,191)  =   #ffefbf
+    LGRN="223;255;191"      # rgb(223,255,191)  =   #dfffbf
+    LBLU="191;218;255"      # rgb(191,218,255)  =   #bfdaff
+    LGRY="175;175;178"      # rgb(175,175,178)  =   #afafb2
+    LLGRY="137;137;140"     # rgb(137,137,140)  =   #89898c
+    MGRY="100;100;102"      # rgb(100,100,102)  =   #646466
+    DGRY="62;62;64"         # rgb(62,62,64)     =   #3e3e40
+    DDGRY="37;37;39"        # rgb(37,37,39)     =   #252527
+
+    # falcon special colors
+    PRPL="255;95;255"       # rgb(255,95,255)   =   #ff5fff
+    BRWN="102;56;41"        # rgb(102,56,41)    =   #663829
+    LBRW="102;87;41"        # rgb(102,87,41)    =   #665729
+    DGRN="71;102;41"        # rgb(71,102,41)    =   #476629
+    SGRY="128;128;128"      # rgb(128,128,128)  =   #808080
+    SBLK="11;11;26"         # rgb(11,11,26)     =   #0b0b1a
+fi
 
 # LS COLOR DEFINITIONS:
 # each line should contain the following string separated by spaces:
@@ -170,6 +215,8 @@ COLORS=(
     "*.laccdb NON SGRY CLC "       # icon f023
     "*.mfd NON YLW CLC "           # icon f279
     "*.tmp NON SGRY CLC "          # icon f1b1
+    "*.one NON PRPL CLC ﱅ"          # icon fc45
+    "*.onetoc2 NON PRPL CLC ﱅ"      # icon fc45
 
     # images
     "*.jpg NON PRPL CLC "          # icon f1c5
@@ -238,15 +285,30 @@ do
     # index 4 = icon
     if [[ "${ARR[3]}" == "CLC" ]]
     then
-        # NOTE: no semicolon prior to last m<icon>
-        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$FG";"${!ARR[2]}"m"${ARR[4]}" \e:"
+        # no background color
+        if [[ "${ARR[1]}" == "NON" ]]
+        then
+            # no text attribute
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}"m"${ARR[4]}" :"
+        else
+            # with text attribute
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"${!ARR[1]}"m"${ARR[4]}" :"
+        fi
     else
-        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$BG";"${!ARR[3]}";"$FG";"${!ARR[2]}"m"${ARR[4]}" \e:"
+        # with background color
+        if [[ "${ARR[1]}" == "NON" ]]
+        then
+            # no text attribute
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"${ARR[4]}" :"
+        else
+            # with text attribute
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}";"${!ARR[1]}"m"${ARR[4]}" :"
+        fi
     fi
 done
 export LS_COLORS=""
-# export LS_COLORS="ec=\e[0m:rs=\e[0m:""$LSC"
-export LS_COLORS="$LSC"
+export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
+# export LS_COLORS="$LSC"
 # export LS_COLORS="$LSC"
 # export LS_COLORS=$(ls_colors_generator)
 
