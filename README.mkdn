@@ -1,3 +1,10 @@
+# Troubleshooting
+- Use `ls | less` to see ls output with escape sequences including what gets added by ls such as the lc,rc,ec items.
+    - This can be useful to see if there are weird/extra escape sequences messing things up.
+- Use the `print_ls_colors.sh` script to print each item in the LS_COLORS variable on its own line.
+    - This made it easier to see specifc icons that were causing problems.
+    - Using certain icons caused that type to print on the right side of the screen.
+
 # How to create special file types
 ln: `ln -s source_file link_name`
 mh: `ln source_file link_name`
@@ -19,7 +26,16 @@ ca: use `setcap` http://www.andy-pearce.com/blog/posts/2013/Mar/file-capabilitie
 
 # Known Issues
 Certain icons seems to make the listing not display correctly ie large amount of whitespace and icon on the above line.
-Saw this using `"pi NON LBRW CLC ﳣ"` but changing to `"pi NON LBRW CLC "` fixed the problem.
-Adding extra files in the directory also sometimes changes/fixes the dispaly.
-Not sure what is going on with this.
+When using tmux with multiple panes have seen the listing get printed across to another pane or mess with the text displayed in vim when it is open.
+Both of these issues seem to be caused by specific icons.
+See the troubleshooting section to help determine which icons might be causing issues.
+Adding/removing extra files in the directory changes how things are printed and can potentially mask the issue.
 
+## Known bad icons
+Using SauceCodePro NF
+- ﱅ fc45
+- ﬥ fb25
+- ﭱ fb71
+- ﴘ fd18
+- ﳦ fce6
+- ﳣ fce3
