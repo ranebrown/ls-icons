@@ -307,32 +307,3 @@ do
 done
 export LS_COLORS=""
 export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
-# export LS_COLORS="$LSC"
-# export LS_COLORS="$LSC"
-# export LS_COLORS=$(ls_colors_generator)
-
-# format should be: <BG><COLOR><ATTR><FG><COLOR>
-# <BG><COLOR> can be ommitted (if ommitting omit both)
-# <ATTR> can be ommitted for normal text
-# examples:
-#   1) "$BLD";"$FG";"$RED"  bold red text
-#   2) "$FG";"$GRN" regular green text
-#   3) "$BG";"$GRN";"$BLD";"$FG";"$RED" green background with bold red text
-#   4) "$BLI";"$FG";"$BLU" blinking blue text
-
-# ls colors
-# LSC=()
-# LSC+=("di=m\e["$BG";"$CLC";"$FG";"$RED"m \e:")
-# LSC+=("*README=m\e["$FG";"$BLU"m \e:")
-# IFS="" # internal field separator
-# echo -e "${LSC[*]}"
-
-# useage: `export LS_COLORS=$(gen_ls_colors.sh)`
-# limitations - without modifying ls.c need to use `-w$(expr $(tput cols) - 2)` in ls alias to handle the 2 extra characters (space and icon). Also, specific folders can't have a special color and/or icon.
-
-# possible bashrc settings:
-# source gen_ls_colors
-#run_ls() {
-#    ls --group-directories-first --color=always -N -w$(expr $(tput cols) - 2) "$@"
-#}
-#alias ls="run_ls"
