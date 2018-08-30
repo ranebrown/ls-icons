@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 
-# to use 256 colors instead of true color set COLOR_256 to true
+# use 256 colors or 24 bit true color
 COLOR_256=false
+
+# whether or not to display icons
+ICONS=true
 
 # special type codes
 # no: Normal: non-filename text, global default (unset by default)
@@ -45,7 +48,7 @@ REV="7" # reversed (reverse FG and BG colors)
 CON="8" # concealed (hide text)
 
 # foreground or background
-if [[ "$COLOR_256" == "true" ]]
+if [[ "$COLOR_256" == true ]]
 then
     FG="38;5"
     BG="48;5"
@@ -258,26 +261,35 @@ do
     # index 2 = FG color
     # index 3 = BG color
     # index 4 = icon
+
+    # turn icons on/off
+    if [[ "$ICONS" == true ]]
+    then
+        ICN=""${ARR[4]}" "
+    else
+        ICN=""
+    fi
+    
     if [[ "${ARR[3]}" == "CLC" ]]
     then
         # no background color
         if [[ "${ARR[1]}" == "NON" ]]
         then
             # no text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}"m"${ARR[4]}" :"
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}"m"$ICN":"
         else
             # with text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"${!ARR[1]}"m"${ARR[4]}" :"
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"${!ARR[1]}"m"$ICN":"
         fi
     else
         # with background color
         if [[ "${ARR[1]}" == "NON" ]]
         then
             # no text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"${ARR[4]}" :"
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"$ICN":"
         else
             # with text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}";"${!ARR[1]}"m"${ARR[4]}" :"
+            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}";"${!ARR[1]}"m"$ICN":"
         fi
     fi
 done
