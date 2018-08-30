@@ -99,7 +99,7 @@ else
     PWRP_ORG="209;68;36"    # rgb(209,68,36)
     VISI_BLU="54;81;158"    # rgb(53,81,158)
     PDF_RED="207;10;10"     # rgb(207,10,10)
-
+    MAPF_YLW="243;168;17"   # rgb(243,168,17)
 
 fi
 
@@ -121,8 +121,8 @@ COLORS=(
     "mh BLD B_CYN2 CLC "               #x multi-hardlink,   icon f44c
     "mi NON B_BLK1 B_RED2 "            #x missing link,     icon f837
     "or NON B_BLK1 B_CYN2 "            #x orphaned link,    icon f839
-    "bd NON B_YLW3 CLC "               #x block device,     icon f0c8
-    "cd NON B_YLW3 CLC "               #x character device, icon f096
+    "bd NON B_YLW2 CLC "               #x block device,     icon f0c8
+    "cd NON B_YLW2 CLC "               #x character device, icon f096
     "pi NON B_RED1 CLC "               #x pipe,             icon f1a8
     "so NON B_RED1 CLC "               #x socket,           icon f2da
     "su NON B_BLK1 B_BLU3 "            #x setuid,           icon f007
@@ -146,7 +146,7 @@ COLORS=(
     "*.markdown NON B_YLW1 CLC "       #x icon e609
 
     # binary files
-    "*.bin NON B_GRY6 CLC "            #x icon f471
+    "*.bin NON B_GRY7 CLC "            #x icon f471
 
     # source code
     "*.c NON B_WHT1 CLC "              #x icon e61e
@@ -155,8 +155,8 @@ COLORS=(
     "*.hpp NON B_WHT1 CLC "            #x icon e61d
     "*.asm NON B_WHT1 CLC "            #x icon e753
     "*.py NON B_WHT1 CLC "             #x icon f820
-    "*.pyc NON B_GRY6 CLC "            #x icon f81f
-    "*.stackdump NON B_GRY6 CLC "      #x icon f6e4
+    "*.pyc NON B_GRY7 CLC "            #x icon f81f
+    "*.stackdump NON B_GRY7 CLC "      #x icon f6e4
     "*.json NON B_WHT1 CLC "           #x icon e60b
 
     # html
@@ -173,12 +173,12 @@ COLORS=(
 
     # git
     "*.git NON B_GRN2 CLC "            #x icon f7a1
-    "*.gitignore NON B_ORG1 CLC "      #x icon f7a1
+    "*.gitignore NON B_ORG2 CLC "      #x icon f7a1
 
     # documents
     "*.pdf NON PDF_RED CLC "           #x icon f1c1
-    "*.mfd NON B_YLW1 CLC "            #x icon f279
-    "*.tmp NON B_GRY5 CLC "            #x icon f1b1
+    "*.mfd NON MAPF_YLW CLC "          #x icon f279
+    "*.tmp NON B_GRY7 CLC "            #x icon f1b1
     
     # Microsoft
     "*.doc NON WORD_BLU CLC "          #x icon f1c2
@@ -193,7 +193,7 @@ COLORS=(
     "*.one NON NOTE_PRP CLC "          #x icon f89d
     "*.onetoc2 NON NOTE_PRP CLC "      #x icon f89d
     "*.accdb NON ACCS_RED CLC "        #x icon f472
-    "*.laccdb NON B_GRY5 CLC "         #x icon f023
+    "*.laccdb NON B_GRY7 CLC "         #x icon f023
     "*.lnk NON B_CYN2 CLC "            #x icon f482
 
     # images
@@ -219,21 +219,21 @@ COLORS=(
     "*.cmd NON B_RED2 CLC "            #x icon f120
 
     # compressed files
-    "*.tar NON B_GRY4 CLC "            #x icon f0f6
-    "*.xz NON B_GRY4 CLC "             #x icon f0f6
-    "*.zip NON B_GRY4 CLC "            #x icon f0f6
-    "*.7z NON B_GRY4 CLC "             #x icon f0f6
-    "*.gz NON B_GRY4 CLC "             #x icon f0f6
+    "*.tar NON B_GRY6 CLC "            #x icon f0f6
+    "*.xz NON B_GRY6 CLC "             #x icon f0f6
+    "*.zip NON B_GRY6 CLC "            #x icon f0f6
+    "*.7z NON B_GRY6 CLC "             #x icon f0f6
+    "*.gz NON B_GRY6 CLC "             #x icon f0f6
 
     # config files
-    "*vimrc NON BYLW CLC "             #x icon e615
-    "*bashrc NON BYLW CLC "            #x icon e615
-    "*bash_profile NON BYLW CLC "      #x icon e615
-    "*gitconfig NON BYLW CLC "         #x icon e615
-    "*minttyrc NON BYLW CLC "          #x icon e615
-    "*inputrc NON BYLW CLC "           #x icon e615
-    "*taskrc NON BYLW CLC "            #x icon e615
-    "*.conf NON BYLW CLC "             #x icon e615
+    "*vimrc NON B_BLU4 CLC "           #x icon e615
+    "*bashrc NON B_BLU4 CLC "          #x icon e615
+    "*bash_profile NON B_BLU4 CLC "    #x icon e615
+    "*gitconfig NON B_BLU4 CLC "       #x icon e615
+    "*minttyrc NON B_BLU4 CLC "        #x icon e615
+    "*inputrc NON B_BLU4 CLC "         #x icon e615
+    "*taskrc NON B_BLU4 CLC "          #x icon e615
+    "*.conf NON B_BLU4 CLC "           #x icon e615
 
     # file/folder name specific (requires special build of ls for folders)
     "*README.md BLD B_YLW1 CLC "       #x icon e714
@@ -243,7 +243,7 @@ COLORS=(
     "*LICENSE BLD B_YLW1 CLC "         #x icon e714
     "*tags NON B_GRN3 CLC "            #x icon f02c
     "*PKG-INFO NON B_GRN3 CLC "        #x icon f05a
-    "*Makefile NON B_CYN1 CLC "        #x icon f0ad
+    "*Makefile NON B_ORG1 CLC "        #x icon f0ad
 )
 
 LSC=""
