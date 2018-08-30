@@ -91,6 +91,15 @@ else
     B_PRP4="255;95;255"     # rgb(255,95,255)
 
     # other colors
+    WORD_BLU="40;83;149"    # rgb(40,83,149)
+    EXCL_GRN="32;112;68"    # rgb(32,112,68)
+    ACCS_RED="164;54;57"    # rgb(164,54,57)
+    NOTE_PRP="123;54;118"   # rgb(123,54,118)
+    OUTL_BLU="0;111;196"    # rgb(0,111,196)
+    PWRP_ORG="209;68;36"    # rgb(209,68,36)
+    VISI_BLU="54;81;158"    # rgb(53,81,158)
+    PDF_RED="207;10;10"     # rgb(207,10,10)
+
 
 fi
 
@@ -167,25 +176,25 @@ COLORS=(
     "*.gitignore NON B_ORG1 CLC "      #x icon f7a1
 
     # documents
-    "*.pdf NON B_RED1 CLC "            #x icon f1c1
-    "*.msg NON B_BLU2 CLC "            #x icon f6ee
+    "*.pdf NON PDF_RED CLC "           #x icon f1c1
     "*.mfd NON B_YLW1 CLC "            #x icon f279
     "*.tmp NON B_GRY5 CLC "            #x icon f1b1
-
+    
     # Microsoft
-    "*.doc NON B_BLU3 CLC "            #x icon f1c2
-    "*.docx NON B_BLU3 CLC "           #x icon f1c2
-    "*.ppt NON B_ORG1 CLC "            #x icon f1c4
-    "*.pptx NON B_ORG1 CLC "           #x icon f1c4
-    "*.xls NON B_GRN2 CLC "            #x icon f1c3
-    "*.xlsx NON B_GRN2 CLC "           #x icon f1c3
-    "*.vsdx NON B_BLU2 CLC "           #x icon f1c3
-    "*.one NON B_PRP4 CLC "            #x icon f89d
-    "*.onetoc2 NON B_PRP4 CLC "        #x icon f89d
-    "*.accdb NON B_RED2 CLC "          #x icon f472
+    "*.doc NON WORD_BLU CLC "          #x icon f1c2
+    "*.docx NON WORD_BLU CLC "         #x icon f1c2
+    "*.ppt NON PWRP_ORG CLC "          #x icon f1c4
+    "*.pptx NON PWRP_ORG CLC "         #x icon f1c4
+    "*.xls NON EXCL_GRN CLC "          #x icon f1c3
+    "*.xlsx NON EXCL_GRN CLC "         #x icon f1c3
+    "*.vsd NON VISI_BLU CLC "          #x icon e716
+    "*.vsdx NON VISI_BLU CLC "         #x icon e716
+    "*.msg NON OUTL_BLU CLC "          #x icon f6ee
+    "*.one NON NOTE_PRP CLC "          #x icon f89d
+    "*.onetoc2 NON NOTE_PRP CLC "      #x icon f89d
+    "*.accdb NON ACCS_RED CLC "        #x icon f472
     "*.laccdb NON B_GRY5 CLC "         #x icon f023
     "*.lnk NON B_CYN2 CLC "            #x icon f482
-
 
     # images
     "*.jpg NON B_PRP3 CLC "            #x icon f1c5
