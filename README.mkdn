@@ -64,3 +64,4 @@ Using SauceCodePro NF
 - Add support for disabling icons
 - Allow settings control through command line options
 - Script to generate test filetypes (in test dir) based on COLORS array?
+- Add ability to print filetype/icons based on color to test what is set the same
