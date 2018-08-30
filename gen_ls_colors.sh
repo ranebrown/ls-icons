@@ -50,82 +50,48 @@ then
     FG="38;5"
     BG="48;5"
 
-    # falcon terminal colors
-    BLK="10"
-    RED="20"
-    GRN="30"
-    YLW="40"
-    BLU="50"
-    ORG="60"
-    CYN="70"
-    GRY="90"
-    BBLK="110"
-    BRED="120"
-    BGRN="130"
-    BYLW="140"
-    BBLU="150"
-    BORG="160"
-    BCYN="170"
-    BWHT="180"
-
-    # falcon standard colors (ones that are the same as terminal not repeated)
-    SGRN="190"
-    TAN="200"
-    LGRN="210"
-    LBLU="220"
-    LGRY="230"
-    LLGRY="5"
-    MGRY="15"
-    DGRY="25"
-    DDGRY="35"
-
-    # falcon special colors
-    PRPL="45"
-    BRWN="55"
-    LBRW="75"
-    DGRN="85"
-    SGRY="95"
-    SBLK="105"
 else
     FG="38;2"
     BG="48;2"
 
-    # falcon terminal colors
-    BLK="0;0;4"             # rgb(0,0,4)
-    RED="255;54;0"          # rgb(255,54,0)
-    GRN="113;142;63"        # rgb(113,142,63)
-    YLW="255;197;82"        # rgb(255,197,82)
-    BLU="99;81;150"         # rgb(99,81,150)
-    ORG="255;118;26"        # rgb(255,118,26)
-    CYN="52;191;164"        # rgb(52,191,164)
-    GRY="180;180;185"       # rgb(180,180,185)
-    BBLK="2;2;33"           # rgb(2,2,33)
-    BRED="255;142;120"      # rgb(255,142,120)
-    BGRN="177;191;117"      # rgb(177,191,117)
-    BYLW="255;211;146"      # rgb(255,211,146)
-    BBLU="153;164;188"      # rgb(153,164,188)
-    BORG="255;176;123"      # rgb(255,176,123)
-    BCYN="129;204;191"      # rgb(139,204,191)
-    BWHT="248;248;255"      # rgb(248,248,255)
+    # base colors (from falcon colorscheme)
+    B_RED1="178;77;54"      # rgb(178,77,54)
+    B_RED2="255;54;0"       # rgb(255,54,0)
+    B_RED3="255;142;120"    # rgb(255,142,120)
+    B_ORG1="255;118;26"     # rgb(255,118,26)
+    B_ORG2="255;176;123"    # rgb(255,176,123)
+    B_ORG3="221;207;191"    # rgb(221,207,191)
+    B_YLW1="255;197;82"     # rgb(255,197,82)
+    B_YLW2="255;211;146"    # rgb(255,211,146)
+    B_YLW3="255;232;192"    # rgb(255,232,192)
+    B_GRN1="121;140;84"     # rgb(121,140,84)
+    B_GRN2="113;142;63"     # rgb(113,142,63)
+    B_GRN3="177;191;117"    # rgb(177,191,117)
+    B_CYN1="139;204;191"    # rgb(139,204,191)
+    B_CYN2="52;191;164"     # rgb(52,191,164)
+    B_BLU1="116;126;140"    # rgb(116,126,140)
+    B_BLU2="153;164;188"    # rgb(153,164,188)
+    B_BLU3="191;218;255"    # rgb(191,218,255)
+    B_BLU4="180;180;185"    # rgb(180,180,185)
+    B_BLK1="0;0;4"          # rgb(0,0,4)
+    B_BLK2="2;2;33"         # rgb(2,2,33)
+    B_BLK3="21;21;33"       # rgb(21,21,33)
+    B_GRY1="33;33;39"       # rgb(33,33,39)
+    B_GRY2="40;40;45"       # rgb(40,40,45)
+    B_GRY3="54;54;58"       # rgb(54,54,58)
+    B_GRY4="47;47;58"       # rgb(47,47,58)
+    B_GRY5="79;79;89"       # rgb(79,79,89)
+    B_GRY6="87;87;94"       # rgb(87,87,94)
+    B_GRY7="120;120;130"    # rgb(120,120,130)
+    B_WHT1="223;223;229"    # rgb(223,223,229)
+    B_WHT2="248;248;255"    # rgb(248,248,255)
+    B_PRP1="63;58;89"       # rgb(63,58,89)
+    B_PRP2="99;81;150"      # rgb(99,81,150)
+    B_PRP3="159;151;204"    # rgb(159,151,204)
+    B_PRP4="255;95;255"     # rgb(255,95,255)
 
-    # falcon standard colors (ones that are the same as terminal not repeated)
-    SGRN="119;153;84"       # rgb(119,153,84)   =   #779954
-    TAN="255;239;191"       # rgb(255,239,191)  =   #ffefbf
-    LGRN="223;255;191"      # rgb(223,255,191)  =   #dfffbf
-    LBLU="191;218;255"      # rgb(191,218,255)  =   #bfdaff
-    LGRY="175;175;178"      # rgb(175,175,178)  =   #afafb2
-    LLGRY="137;137;140"     # rgb(137,137,140)  =   #89898c
-    MGRY="100;100;102"      # rgb(100,100,102)  =   #646466
-    DGRY="62;62;64"         # rgb(62,62,64)     =   #3e3e40
-    DDGRY="37;37;39"        # rgb(37,37,39)     =   #252527
+    # other colors
 
-    # falcon special colors
-    PRPL="255;95;255"       # rgb(255,95,255)   =   #ff5fff
-    BRWN="102;56;41"        # rgb(102,56,41)    =   #663829
-    LBRW="102;87;41"        # rgb(102,87,41)    =   #665729
-    DGRN="71;102;41"        # rgb(71,102,41)    =   #476629
-    SGRY="128;128;128"      # rgb(128,128,128)  =   #808080
-    SBLK="11;11;26"         # rgb(11,11,26)     =   #0b0b1a
 fi
 
 # LS COLOR DEFINITIONS:
@@ -139,135 +105,136 @@ fi
 # to type a unicode character in vim type ctrl-v+u<number> e.g. ctrl-v ue612
 COLORS=(
     # special
-    "fi NON BWHT CLC "             # file,             icon e612
-    "di NON GRN CLC "              # directory,        icon e5fe
-    "ex NON RED CLC "              # executable,       icon f135
-    "ln NON BCYN CLC "             # symlink,          icon f178
-    "mh BLD BCYN CLC "             # multi-hardlink,   icon f44c
-    "mi NON BLK RED "              # missing link,     icon f837
-    "or NON BLK BCYN "             # orphaned link,    icon f839
-    "bd NON LGRN CLC "             # block device,     icon f0c8
-    "cd NON LGRN CLC "             # character device, icon f096
-    "pi NON LBRW CLC "             # pipe,             icon f1a8
-    "so NON LBRW CLC "             # socket,           icon f2da
-    "su NON BLK LBLU "             # setuid,           icon f007
-    "sg NON BLK LBLU "             # setgid,           icon f0c0
-    "st NON GRN CLC "              # sticky,           icon f249
-    "ow NON GRN CLC "              # other-writable,   icon f044
-    "tw NON GRN CLC "              # ow w/ sticky,     icon f14b
+    "fi NON B_WHT2 CLC "               #x file,             icon e612
+    "di NON B_GRN2 CLC "               #x directory,        icon e5fe
+    "ex NON B_RED2 CLC "               #x executable,       icon f135
+    "ln NON B_CYN2 CLC "               #x symlink,          icon f178
+    "mh BLD B_CYN2 CLC "               #x multi-hardlink,   icon f44c
+    "mi NON B_BLK1 B_RED2 "            #x missing link,     icon f837
+    "or NON B_BLK1 B_CYN2 "            #x orphaned link,    icon f839
+    "bd NON B_YLW3 CLC "               #x block device,     icon f0c8
+    "cd NON B_YLW3 CLC "               #x character device, icon f096
+    "pi NON B_RED1 CLC "               #x pipe,             icon f1a8
+    "so NON B_RED1 CLC "               #x socket,           icon f2da
+    "su NON B_BLK1 B_BLU3 "            #x setuid,           icon f007
+    "sg NON B_BLK1 B_BLU3 "            #x setgid,           icon f0c0
+    "st NON B_GRN2 CLC "               #x sticky,           icon f249
+    "ow NON B_GRN2 CLC "               #x other-writable,   icon f044
+    "tw NON B_GRN2 CLC "               #x ow w/ sticky,     icon f14b
 
     # other special (haven't seen yet and couldn't figure out how to create)
-    "do BLD PRPL BWHT "            # door,             icon f7a8
-    "ca BLD PRPL BWHT "            # capability,       icon e7ad
+    "do BLD B_PRP4 B_WHT2 "            # door,             icon f7a8
+    "ca BLD B_PRP4 B_WHT2 "            # capability,       icon e7ad
 
     # extensions
-    "*.pem NON CYN CLC "           # icon f084
-    "*.txt NON BWHT CLC "          # icon f0f6
-    "*.log NON LLGRY CLC "         # icon f02d
+    "*.pem NON B_CYN1 CLC "            #x icon f084
+    "*.txt NON B_WHT2 CLC "            #x icon f0f6
+    "*.log NON B_GRY7 CLC "            #x icon f02d
 
     # markdown
-    "*.md NON YLW CLC "            # icon e609
-    "*.mkdn NON YLW CLC "          # icon e609
-    "*.markdown NON YLW CLC "      # icon e609
+    "*.md NON B_YLW1 CLC "             #x icon e609
+    "*.mkdn NON B_YLW1 CLC "           #x icon e609
+    "*.markdown NON B_YLW1 CLC "       #x icon e609
 
     # binary files
-    "*.bin NON LGRY CLC "          # icon f471
+    "*.bin NON B_GRY6 CLC "            #x icon f471
 
     # source code
-    "*.c NON GRY CLC "             # icon e61e
-    "*.h NON GRY CLC "             # icon e61e
-    "*.cpp NON GRY CLC "           # icon e61d
-    "*.hpp NON GRY CLC "           # icon e61d
-    "*.asm NON GRY CLC "           # icon e753
-    "*.py NON GRY CLC "            # icon f820
-    "*.pyc NON LGRY CLC "          # icon f81f
-    "*.stackdump NON LGRY CLC "    # icon f6e4
-    "*.json NON GRY CLC "          # icon e60b
+    "*.c NON B_WHT1 CLC "              #x icon e61e
+    "*.h NON B_WHT1 CLC "              #x icon e61e
+    "*.cpp NON B_WHT1 CLC "            #x icon e61d
+    "*.hpp NON B_WHT1 CLC "            #x icon e61d
+    "*.asm NON B_WHT1 CLC "            #x icon e753
+    "*.py NON B_WHT1 CLC "             #x icon f820
+    "*.pyc NON B_GRY6 CLC "            #x icon f81f
+    "*.stackdump NON B_GRY6 CLC "      #x icon f6e4
+    "*.json NON B_WHT1 CLC "           #x icon e60b
 
     # html
-    "*.htm NON TAN CLC "           # icon e60e
-    "*.html NON TAN CLC "          # icon e60e
-    "*.css NON TAN CLC "           # icon e7b6
-    "*.xml NON TAN CLC "           # icon f72d
-    "*.xsd NON TAN CLC "           # icon f72d
-    "*.js NON TAN CLC "            # icon e74e
+    "*.htm NON B_ORG3 CLC "            #x icon e60e
+    "*.html NON B_ORG3 CLC "           #x icon e60e
+    "*.css NON B_ORG3 CLC "            #x icon e7b6
+    "*.xml NON B_ORG3 CLC "            #x icon f72d
+    "*.xsd NON B_ORG3 CLC "            #x icon f72d
+    "*.js NON B_ORG3 CLC "             #x icon e74e
 
     # vim
-    "*viminfo NON SGRN CLC "       # icon e7c5
-    "*.vim NON GRN CLC "           # icon e7c5
+    "*viminfo NON B_GRN1 CLC "         #x icon e7c5
+    "*.vim NON B_GRN2 CLC "            #x icon e7c5
 
     # git
-    "*.git NON GRN CLC "           # icon f7a1
-    "*.gitignore NON ORG CLC "     # icon f7a1
+    "*.git NON B_GRN2 CLC "            #x icon f7a1
+    "*.gitignore NON B_ORG1 CLC "      #x icon f7a1
 
     # documents
-    "*.pdf NON BRED CLC "          # icon f1c1
-    "*.doc NON BLU CLC "           # icon f1c2
-    "*.docx NON BLU CLC "          # icon f1c2
-    "*.ppt NON BORG CLC "          # icon f1c4
-    "*.pptx NON BORG CLC "         # icon f1c4
-    "*.xls NON BGRN CLC "          # icon f1c3
-    "*.xlsx NON BGRN CLC "         # icon f1c3
-    "*.vsdx NON BBLU CLC "         # icon f1c3
-    "*.msg NON BBLU CLC "          # icon f6ee
-    "*.accdb NON BRED CLC "        # icon f472
-    "*.laccdb NON SGRY CLC "       # icon f023
-    "*.mfd NON YLW CLC "           # icon f279
-    "*.tmp NON SGRY CLC "          # icon f1b1
-    "*.one NON PRPL CLC "          # icon f89d
-    "*.onetoc2 NON PRPL CLC "      # icon f89d
+    "*.pdf NON B_RED1 CLC "            #x icon f1c1
+    "*.msg NON B_BLU2 CLC "            #x icon f6ee
+    "*.mfd NON B_YLW1 CLC "            #x icon f279
+    "*.tmp NON B_GRY5 CLC "            #x icon f1b1
+
+    # Microsoft
+    "*.doc NON B_BLU3 CLC "            #x icon f1c2
+    "*.docx NON B_BLU3 CLC "           #x icon f1c2
+    "*.ppt NON B_ORG1 CLC "            #x icon f1c4
+    "*.pptx NON B_ORG1 CLC "           #x icon f1c4
+    "*.xls NON B_GRN2 CLC "            #x icon f1c3
+    "*.xlsx NON B_GRN2 CLC "           #x icon f1c3
+    "*.vsdx NON B_BLU2 CLC "           #x icon f1c3
+    "*.one NON B_PRP4 CLC "            #x icon f89d
+    "*.onetoc2 NON B_PRP4 CLC "        #x icon f89d
+    "*.accdb NON B_RED2 CLC "          #x icon f472
+    "*.laccdb NON B_GRY5 CLC "         #x icon f023
+    "*.lnk NON B_CYN2 CLC "            #x icon f482
+
 
     # images
-    "*.jpg NON PRPL CLC "          # icon f1c5
-    "*.jpeg NON PRPL CLC "         # icon f1c5
-    "*.JPG NON PRPL CLC "          # icon f1c5
-    "*.png NON PRPL CLC "          # icon f1c5
-    "*.PNG NON PRPL CLC "          # icon f1c5
-    "*.bmp NON PRPL CLC "          # icon f1c5
-    "*.BMP NON PRPL CLC "          # icon f1c5
-    "*.gif NON PRPL CLC "          # icon f1c5
-    "*.svg NON PRPL CLC "          # icon f1c5
-    "*.ai NON PRPL CLC "           # icon f1c5
-    "*.ico NON PRPL CLC "          # icon f1c5
-    "*.tif NON PRPL CLC "          # icon f1c5
-    "*.tiff NON PRPL CLC "         # icon f1c5
-    "*.ps NON PRPL CLC "           # icon f1c5
-    "*.psd NON PRPL CLC "          # icon f1c5
+    "*.jpg NON B_PRP3 CLC "            #x icon f1c5
+    "*.jpeg NON B_PRP3 CLC "           #x icon f1c5
+    "*.JPG NON B_PRP3 CLC "            #x icon f1c5
+    "*.png NON B_PRP3 CLC "            #x icon f1c5
+    "*.PNG NON B_PRP3 CLC "            #x icon f1c5
+    "*.bmp NON B_PRP3 CLC "            #x icon f1c5
+    "*.BMP NON B_PRP3 CLC "            #x icon f1c5
+    "*.gif NON B_PRP3 CLC "            #x icon f1c5
+    "*.svg NON B_PRP3 CLC "            #x icon f1c5
+    "*.ai NON B_PRP3 CLC "             #x icon f1c5
+    "*.ico NON B_PRP3 CLC "            #x icon f1c5
+    "*.tif NON B_PRP3 CLC "            #x icon f1c5
+    "*.tiff NON B_PRP3 CLC "           #x icon f1c5
+    "*.ps NON B_PRP3 CLC "             #x icon f1c5
+    "*.psd NON B_PRP3 CLC "            #x icon f1c5
 
     # shell
-    "*.sh NON RED CLC "            # icon f120
-    "*.bat NON RED CLC "           # icon f120
-    "*.cmd NON RED CLC "           # icon f120
-
-    # Windows
-    "*.lnk NON BCYN CLC "          # icon f482
+    "*.sh NON B_RED2 CLC "             #x icon f120
+    "*.bat NON B_RED2 CLC "            #x icon f120
+    "*.cmd NON B_RED2 CLC "            #x icon f120
 
     # compressed files
-    "*.tar NON MGRY CLC "          # icon f0f6
-    "*.xz NON MGRY CLC "           # icon f0f6
-    "*.zip NON MGRY CLC "          # icon f0f6
-    "*.7z NON MGRY CLC "           # icon f0f6
-    "*.gz NON MGRY CLC "           # icon f0f6
+    "*.tar NON B_GRY4 CLC "            #x icon f0f6
+    "*.xz NON B_GRY4 CLC "             #x icon f0f6
+    "*.zip NON B_GRY4 CLC "            #x icon f0f6
+    "*.7z NON B_GRY4 CLC "             #x icon f0f6
+    "*.gz NON B_GRY4 CLC "             #x icon f0f6
 
     # config files
-    "*vimrc NON BYLW CLC "         # icon e615
-    "*bashrc NON BYLW CLC "        # icon e615
-    "*bash_profile NON BYLW CLC "  # icon e615
-    "*gitconfig NON BYLW CLC "     # icon e615
-    "*minttyrc NON BYLW CLC "      # icon e615
-    "*inputrc NON BYLW CLC "       # icon e615
-    "*taskrc NON BYLW CLC "        # icon e615
-    "*.conf NON BYLW CLC "         # icon e615
+    "*vimrc NON BYLW CLC "             #x icon e615
+    "*bashrc NON BYLW CLC "            #x icon e615
+    "*bash_profile NON BYLW CLC "      #x icon e615
+    "*gitconfig NON BYLW CLC "         #x icon e615
+    "*minttyrc NON BYLW CLC "          #x icon e615
+    "*inputrc NON BYLW CLC "           #x icon e615
+    "*taskrc NON BYLW CLC "            #x icon e615
+    "*.conf NON BYLW CLC "             #x icon e615
 
     # file/folder name specific (requires special build of ls for folders)
-    "*README.md BLD YLW CLC "      # icon e714
-    "*README.mkdn BLD YLW CLC "    # icon e714
-    "*README-cn.md BLD YLW CLC "   # icon e714
-    "*README BLD YLW CLC "         # icon e714
-    "*LICENSE BLD YLW CLC "        # icon e714
-    "*tags NON BGRN CLC "          # icon f02c
-    "*PKG-INFO NON BGRN CLC "      # icon f05a
-    "*Makefile NON CYN CLC "       # icon f0ad
+    "*README.md BLD B_YLW1 CLC "       #x icon e714
+    "*README.mkdn BLD B_YLW1 CLC "     #x icon e714
+    "*README-cn.md BLD B_YLW1 CLC "    #x icon e714
+    "*README BLD B_YLW1 CLC "          #x icon e714
+    "*LICENSE BLD B_YLW1 CLC "         #x icon e714
+    "*tags NON B_GRN3 CLC "            #x icon f02c
+    "*PKG-INFO NON B_GRN3 CLC "        #x icon f05a
+    "*Makefile NON B_CYN1 CLC "        #x icon f0ad
 )
 
 LSC=""
