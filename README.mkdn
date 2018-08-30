@@ -57,3 +57,10 @@ Using SauceCodePro NF
 - ﳣ fce3
 - ﮷ fbb7
 - ﴬ fd2c
+
+# ToDo
+- Add 256 colors
+    - Script to convert rgb colors to 256 pallette
+- Add support for disabling icons
+- Allow settings control through command line options
+- Script to generate test filetypes (in test dir) based on COLORS array?
