@@ -49,14 +49,14 @@ Adding/removing extra files in the directory changes how things are printed and 
 
 ## Known bad icons
 Using SauceCodePro NF
-- ﱅ fc45
-- ﬥ fb25
-- ﭱ fb71
-- ﴘ fd18
-- ﳦ fce6
-- ﳣ fce3
-- ﮷ fbb7
-- ﴬ fd2c
+- fc45
+- fb25
+- fb71
+- fd18
+- fce6
+- fce3
+- fbb7
+- fd2c
 
 # ToDo
 - Add 256 colors
