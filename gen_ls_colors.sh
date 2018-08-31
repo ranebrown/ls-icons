@@ -103,6 +103,7 @@ else
     VISI_BLU="54;81;158"    # rgb(53,81,158)
     PDF_RED="207;10;10"     # rgb(207,10,10)
     MAPF_YLW="243;168;17"   # rgb(243,168,17)
+    VISS_PRP="134;95;197"   # rgb(134,95,197)
 
 fi
 
@@ -140,7 +141,7 @@ COLORS=(
 
     # extensions
     "*.pem NON B_CYN1 CLC "            #x icon f084
-    "*.txt NON B_WHT2 CLC "            #x icon f0f6
+    "*.txt NON B_BLU4 CLC "            #x icon f0f6
     "*.log NON B_GRY7 CLC "            #x icon f02d
 
     # markdown
@@ -156,11 +157,18 @@ COLORS=(
     "*.h NON B_WHT1 CLC "              #x icon e61e
     "*.cpp NON B_WHT1 CLC "            #x icon e61d
     "*.hpp NON B_WHT1 CLC "            #x icon e61d
+    "*.cs NON B_WHT1 CLC "             #x icon f81a
     "*.asm NON B_WHT1 CLC "            #x icon e753
     "*.py NON B_WHT1 CLC "             #x icon f820
     "*.pyc NON B_GRY7 CLC "            #x icon f81f
+    "*.prl NON B_WHT1 CLC "            #x icon e769
+    "*.cgi NON B_WHT1 CLC "            #x icon e769
+    "*.pl NON B_WHT1 CLC "             #x icon e769
     "*.stackdump NON B_GRY7 CLC "      #x icon f6e4
     "*.json NON B_WHT1 CLC "           #x icon e60b
+    "*.dll NON B_GRY6 CLC "            #x icon f830
+    "*.a NON B_GRY6 CLC "              #x icon f830
+    "*.so NON B_GRY6 CLC "             #x icon f830
 
     # html
     "*.htm NON B_ORG3 CLC "            #x icon e60e
@@ -199,6 +207,9 @@ COLORS=(
     "*.accdb NON ACCS_RED CLC "        #x icon f472
     "*.laccdb NON B_GRY7 CLC "         #x icon f023
     "*.lnk NON B_CYN2 CLC "            #x icon f482
+    "*.sln NON VISS_PRP CLC "          #x icon e70c
+    "*.csproj NON VISS_PRP CLC "       #x icon e70c
+    "*.suo NON B_GRY7 CLC "            #x icon e70c
 
     # images
     "*.jpg NON B_PRP3 CLC "            #x icon f1c5
@@ -223,22 +234,23 @@ COLORS=(
     "*.cmd NON B_RED2 CLC "            #x icon f120
 
     # compressed files
-    "*.tar NON B_GRY6 CLC "            #x icon f0f6
-    "*.xz NON B_GRY6 CLC "             #x icon f0f6
-    "*.zip NON B_GRY6 CLC "            #x icon f0f6
-    "*.7z NON B_GRY6 CLC "             #x icon f0f6
-    "*.gz NON B_GRY6 CLC "             #x icon f0f6
+    "*.tar NON B_GRY3 CLC "            #x icon f0f6
+    "*.xz NON B_GRY3 CLC "             #x icon f0f6
+    "*.zip NON B_GRY3 CLC "            #x icon f0f6
+    "*.7z NON B_GRY3 CLC "             #x icon f0f6
+    "*.gz NON B_GRY3 CLC "             #x icon f0f6
 
     # config files
-    "*vimrc NON B_BLU4 CLC "           #x icon e615
-    "*bashrc NON B_BLU4 CLC "          #x icon e615
-    "*bash_profile NON B_BLU4 CLC "    #x icon e615
-    "*gitconfig NON B_BLU4 CLC "       #x icon e615
-    "*minttyrc NON B_BLU4 CLC "        #x icon e615
-    "*inputrc NON B_BLU4 CLC "         #x icon e615
-    "*taskrc NON B_BLU4 CLC "          #x icon e615
-    "*.conf NON B_BLU4 CLC "           #x icon e615
-    "*.cfg NON B_BLU4 CLC "            #x icon e615
+    "*vimrc NON B_YLW2 CLC "           #x icon e615
+    "*bashrc NON B_YLW2 CLC "          #x icon e615
+    "*bash_profile NON B_YLW2 CLC "    #x icon e615
+    "*gitconfig NON B_YLW2 CLC "       #x icon e615
+    "*minttyrc NON B_YLW2 CLC "        #x icon e615
+    "*inputrc NON B_YLW2 CLC "         #x icon e615
+    "*taskrc NON B_YLW2 CLC "          #x icon e615
+    "*.conf NON B_YLW2 CLC "           #x icon e615
+    "*.config NON B_YLW2 CLC "         #x icon e615
+    "*.cfg NON B_YLW2 CLC "            #x icon e615
 
     # file/folder name specific (requires special build of ls for folders)
     "*README.md BLD B_YLW1 CLC "       #x icon e714
