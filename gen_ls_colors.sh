@@ -182,6 +182,7 @@ COLORS=(
     "*.pdf NON PDF_RED CLC "           #x icon f1c1
     "*.mfd NON MAPF_YLW CLC "          #x icon f279
     "*.tmp NON B_GRY7 CLC "            #x icon f1b1
+    "*.wiki NON B_PRP2 CLC "           #x icon f266
     
     # Microsoft
     "*.doc NON WORD_BLU CLC "          #x icon f1c2
@@ -237,6 +238,7 @@ COLORS=(
     "*inputrc NON B_BLU4 CLC "         #x icon e615
     "*taskrc NON B_BLU4 CLC "          #x icon e615
     "*.conf NON B_BLU4 CLC "           #x icon e615
+    "*.cfg NON B_BLU4 CLC "            #x icon e615
 
     # file/folder name specific (requires special build of ls for folders)
     "*README.md BLD B_YLW1 CLC "       #x icon e714
