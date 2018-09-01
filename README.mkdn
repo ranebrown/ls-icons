@@ -1,4 +1,5 @@
 # Installation
+
 ## Custom build of ls
 
 ## Default ls
@@ -13,11 +14,51 @@ This is necessary since adding in icons adds extra characters that ls does not a
 Without this the output of `ls` can run off then end of the screen and wrap to the next line making things very ugly.
 The number 18 was picked as a value that works for me but feel free to adjust it based on your screen size and if you are using something like tmux.
 
+# LS Info
+Special types:
+- no: Normal: non-filename text, global default (unset by default)
+- fi: File: normal file that doesn't have a color associated with it
+- di: Directory
+- ex: Executable
+- ln: Symbolic link: can set to 'target' to make the color match the pointed to file
+- mh: multihardlink: files with more than one link
+- mi: Missing file: non-existent file pointed to by symlink (the file the link points to when using -l)
+- or: orphaned: symlink pointing to an orphaned non-existent file
+- bd: Block device: buffered special file (stuff in /dev)
+- cd: Character device: unbuffered special file (stuff in /dev)
+- pi: Named pipe (fifo file)
+- so: Socket file
+- do: Door: special file for inter-process communication between a client and server (currently implemented only in Solaris)
+- su: setuid: file that is (u+s)
+- sg: setgid: file that is (g+s)
+- st: sticky: directory with sticky bit set (+t) and not other-writable
+- ow: other-writeable: Directory that is other-writable (o+w) and not sticky
+- tw: directory that is sticky w/ other-writable (+t,o+w)
+- ca: capability: file with capability
+
+Escape Sequence:
+- lc: left code: opening terminal code (default '\e[' - escape)
+- rc: right code: closing terminal code (default 'm' - end escape)
+- ec: end code: none-filename text (replaces lc+no+rc) (default undefined)
+- rs: Reset to ordinary colors (default '0')
+- cl: clear to end of line (not sure how this works)
+
+Default Escape Sequence:<br>
+type_code is the escape sequence to define the text attribute and color.
+```
+${lc}${type_code}${rc}FILENAME${lc}${no}${rc}
+```
+
+Escape Sequence if `ec` is defined:
+```
+${lc}${type_code}${rc}FILENAME${ec}
+```
+
 # Troubleshooting
 - Use `ls | less` to see ls output with escape sequences including what gets added by ls such as the lc,rc,ec items.
     - This can be useful to see if there are weird/extra escape sequences messing things up.
 - Use the `print_ls_colors.sh` script to print each item in the LS_COLORS variable on its own line.
-    - This made it easier to see specifc icons that were causing problems.
+    - This made it easier to see specific icons that were causing problems.
     - Using certain icons caused that type to print on the right side of the screen.
     - **NOTE:** make sure to run this in a full screen terminal
 
@@ -60,14 +101,17 @@ Using SauceCodePro NF
 
 # ToDo
 - Add 256 colors
-    - Script to convert rgb colors to 256 pallette
+    - Script to convert rgb colors to 256 palette
 - Allow settings control through command line options
 - Script to generate test filetypes (in test dir) based on COLORS array?
+    - Probably want to remove test/ directory so anyone cloning repo doesn't have to download a bunch of files that could be malicious.
 - Add ability to print filetype/icons based on color to test what is set the same
 - Look into cleaning up loop when generating LS_COLORS. Probably a better way to handle things.
 - Add ability to store generated LS_COLORS data in a file so that can be loaded instead of running script each time a shell is started.
-    - Document/test/verify speed improvment?
+    - Document/test/verify speed improvement?
     - Update readme with instructions on using this option
+    - Add option to pass in filename where data should be written to
+- Complete/cleanup readme
 
 ## Done
 - Add support for disabling icons

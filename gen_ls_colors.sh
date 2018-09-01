@@ -9,39 +9,6 @@ ICONS=true
 # generate a file with LS_COLORS data
 GEN_FILE=false
 
-# special type codes
-# no: Normal: non-filename text, global default (unset by default)
-# fi: File: normal file that doesn't have a color associated with it
-# di: Directory
-# ex: Executable
-# ln: Symbolic link: can set to 'target' to make the color match the pointed to file
-# mh: multihardlink: files with more than one link
-# mi: Missing file: non-existent file pointed to by symlink (the file the link points to when using -l)
-# or: orphaned: symlink pointing to an orphaned non-existent file
-# bd: Block device: buffered special file (stuff in /dev)
-# cd: Character device: unbuffered special file (stuff in /dev)
-# pi: Named pipe (fifo file)
-# so: Socket file
-# do: Door: special file for inter-process communication between a client and server (currently implemented only in Solaris)
-# su: setuid: file that is (u+s)
-# sg: setgid: file that is (g+s)
-# st: sticky: directory with sticky bit set (+t) and not other-writable
-# ow: other-writeable: Directory that is other-writable (o+w) and not sticky
-# tw: directory that is sticky w/ other-writable (+t,o+w)
-# ca: capability: file with capability
-
-# escape sequence (defaults seem to work fine)
-# these might only apply if using dircolors
-# lc: left code: opening terminal code (default '\e[' - escape)
-# rc: right code: closing terminal code (default 'm' - end escape)
-# ec: end code: none-filename text (replaces lc+no+rc) (default undefined)
-# rs: Reset to ordinary colors (default '0')
-# cl: clear to end of line (not sure how this works)
-# default ls escape sequence looks something like this:
-#     ${lc}${type_code}${rc}FILENAME${lc}${no}${rc}
-#     if ec is defined: ${lc}${type_code}${rc}FILENAME${ec}
-# type_code is the color sequence that depends on the type or name of file
-
 # text attributes (applies to fg text)
 NON="0" # default/normal
 BLD="1" # bold
@@ -304,8 +271,10 @@ done
 
 if [[ "$GEN_FILE" == true ]]
 then
+    # write LS_COLORS contents to a file
     echo "rs=:ec=\e[0m:lc=:rc=:""$LSC" > ls_colors.txt
 else
+    # set LS_COLORS directly
     export LS_COLORS=""
     export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
 fi
