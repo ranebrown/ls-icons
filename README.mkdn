@@ -65,6 +65,9 @@ Using SauceCodePro NF
 - Script to generate test filetypes (in test dir) based on COLORS array?
 - Add ability to print filetype/icons based on color to test what is set the same
 - Look into cleaning up loop when generating LS_COLORS. Probably a better way to handle things.
+- Add ability to store generated LS_COLORS data in a file so that can be loaded instead of running script each time a shell is started.
+    - Document/test/verify speed improvment?
+    - Update readme with instructions on using this option
 
 ## Done
 - Add support for disabling icons
