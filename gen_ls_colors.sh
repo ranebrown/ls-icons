@@ -6,6 +6,9 @@ COLOR_256=false
 # whether or not to display icons
 ICONS=true
 
+# generate a file with LS_COLORS data
+GEN_FILE=false
+
 # special type codes
 # no: Normal: non-filename text, global default (unset by default)
 # fi: File: normal file that doesn't have a color associated with it
@@ -292,25 +295,17 @@ do
     if [[ "${ARR[3]}" == "CLC" ]]
     then
         # no background color
-        if [[ "${ARR[1]}" == "NON" ]]
-        then
-            # no text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}"m"$ICN":"
-        else
-            # with text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"${!ARR[1]}"m"$ICN":"
-        fi
+        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$FG";"${!ARR[2]}"m"$ICN":"
     else
         # with background color
-        if [[ "${ARR[1]}" == "NON" ]]
-        then
-            # no text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"$ICN":"
-        else
-            # with text attribute
-            LSC+=""${ARR[0]}"=\e["$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}";"${!ARR[1]}"m"$ICN":"
-        fi
+        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"$ICN":"
     fi
 done
-export LS_COLORS=""
-export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
+
+if [[ "$GEN_FILE" == true ]]
+then
+    echo "rs=:ec=\e[0m:lc=:rc=:""$LSC" > ls_colors.txt
+else
+    export LS_COLORS=""
+    export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
+fi
