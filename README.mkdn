@@ -14,7 +14,9 @@ This is necessary since adding in icons adds extra characters that ls does not a
 Without this the output of `ls` can run off then end of the screen and wrap to the next line making things very ugly.
 The number 18 was picked as a value that works for me but feel free to adjust it based on your screen size and if you are using something like tmux.
 
-# LS Info
+# Information
+
+## LS Info
 Special types:
 - no: Normal: non-filename text, global default (unset by default)
 - fi: File: normal file that doesn't have a color associated with it
@@ -53,6 +55,12 @@ Escape Sequence if `ec` is defined:
 ```
 ${lc}${type_code}${rc}FILENAME${ec}
 ```
+
+## ANSI Escape Sequence
+- https://en.wikipedia.org/wiki/ANSI_escape_code
+- [text attributes](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters)
+- [color](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
+- https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
 
 # Troubleshooting
 - Use `ls | less` to see ls output with escape sequences including what gets added by ls such as the lc,rc,ec items.
@@ -112,6 +120,13 @@ Using SauceCodePro NF
     - Update readme with instructions on using this option
     - Add option to pass in filename where data should be written to
 - Complete/cleanup readme
+    - Move some of the info in readme to wiki or other file?
 
 ## Done
 - Add support for disabling icons
+
+# Acknowledgments
+Thanks to the following for inspiration and sources of information:
+- [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- [illinoisjackson/even-better-ls](https://github.com/illinoisjackson/even-better-ls)
+- [trapd00r/LS_COLORS](https://github.com/trapd00r/LS_COLORS)
