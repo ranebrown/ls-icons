@@ -129,7 +129,7 @@ COLORS=(
     "*.cpp NON B_WHT1 CLC "            #x icon e61d
     "*.hpp NON B_WHT1 CLC "            #x icon e61d
     "*.cs NON B_WHT1 CLC "             #x icon f81a
-    "*.pbd NON B_GRY7 CLC "            #x icon e7a7
+    "*.pdb NON B_GRY7 CLC "            #x icon e7a7
     "*.asm NON B_WHT1 CLC "            #x icon e753
     "*.py NON B_WHT1 CLC "             #x icon f820
     "*.pyc NON B_GRY7 CLC "            #x icon f81f
