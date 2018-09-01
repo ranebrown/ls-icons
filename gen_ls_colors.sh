@@ -12,6 +12,7 @@ GEN_FILE=false
 # text attributes (applies to fg text)
 NON="0" # default/normal
 BLD="1" # bold
+ITL="3" # italic
 UDS="4" # underline
 BLI="5" # blinking (requires terminal setting to be on)
 REV="7" # reversed (reverse FG and BG colors)
@@ -101,9 +102,9 @@ COLORS=(
     "so NON B_RED1 CLC "               #x socket,           icon f2da
     "su NON B_BLK1 B_BLU3 "            #x setuid,           icon f007
     "sg NON B_BLK1 B_BLU3 "            #x setgid,           icon f0c0
-    "st NON B_GRN2 CLC "               #x sticky,           icon f249
-    "ow NON B_GRN2 CLC "               #x other-writable,   icon f044
-    "tw NON B_GRN2 CLC "               #x ow w/ sticky,     icon f14b
+    "st ITL B_GRN2 CLC "               #x sticky,           icon f249
+    "ow ITL B_GRN2 CLC "               #x other-writable,   icon f044
+    "tw ITL B_GRN2 CLC "               #x ow w/ sticky,     icon f14b
 
     # other special (haven't seen yet and couldn't figure out how to create)
     "do BLD B_PRP4 B_WHT2 "            # door,             icon f7a8
