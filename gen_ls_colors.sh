@@ -118,7 +118,7 @@ fi
 # to type a unicode character in vim type ctrl-v+u<number> e.g. ctrl-v ue612
 COLORS=(
     # special
-    "fi NON B_WHT2 CLC "               #x file,             icon e612
+    "fi NON B_BLU4 CLC "               #x file,             icon e612
     "di NON B_GRN2 CLC "               #x directory,        icon e5fe
     "ex NON B_RED2 CLC "               #x executable,       icon f135
     "ln NON B_CYN2 CLC "               #x symlink,          icon f178
@@ -158,6 +158,7 @@ COLORS=(
     "*.cpp NON B_WHT1 CLC "            #x icon e61d
     "*.hpp NON B_WHT1 CLC "            #x icon e61d
     "*.cs NON B_WHT1 CLC "             #x icon f81a
+    "*.pbd NON B_GRY7 CLC "            #x icon e7a7
     "*.asm NON B_WHT1 CLC "            #x icon e753
     "*.py NON B_WHT1 CLC "             #x icon f820
     "*.pyc NON B_GRY7 CLC "            #x icon f81f
@@ -166,6 +167,8 @@ COLORS=(
     "*.pl NON B_WHT1 CLC "             #x icon e769
     "*.stackdump NON B_GRY7 CLC "      #x icon f6e4
     "*.json NON B_WHT1 CLC "           #x icon e60b
+
+    # libraries
     "*.dll NON B_GRY6 CLC "            #x icon f830
     "*.a NON B_GRY6 CLC "              #x icon f830
     "*.so NON B_GRY6 CLC "             #x icon f830
@@ -210,6 +213,8 @@ COLORS=(
     "*.sln NON VISS_PRP CLC "          #x icon e70c
     "*.csproj NON VISS_PRP CLC "       #x icon e70c
     "*.suo NON B_GRY7 CLC "            #x icon e70c
+    "*.resx NON B_GRY7 CLC "           #x icon e70c
+    "*.db NON B_PRP3 CLC "             #x icon f08d
 
     # images
     "*.jpg NON B_PRP3 CLC "            #x icon f1c5
