@@ -165,7 +165,7 @@ COLORS=(
     "*.mfd NON MAPF_YLW CLC "          #x icon f279
     "*.tmp NON B_GRY7 CLC "            #x icon f1b1
     "*.wiki NON B_PRP2 CLC "           #x icon f266
-    
+
     # Microsoft
     "*.doc NON WORD_BLU CLC "          #x icon f1c2
     "*.docx NON WORD_BLU CLC "         #x icon f1c2
@@ -186,6 +186,7 @@ COLORS=(
     "*.suo NON B_GRY7 CLC "            #x icon e70c
     "*.resx NON B_GRY7 CLC "           #x icon e70c
     "*.db NON B_PRP3 CLC "             #x icon f08d
+    "*.chm NON B_BLU2 CLC "            # icon f00a
 
     # images
     "*.jpg NON B_PRP3 CLC "            #x icon f1c5
@@ -215,6 +216,8 @@ COLORS=(
     "*.zip NON B_GRY3 CLC "            #x icon f0f6
     "*.7z NON B_GRY3 CLC "             #x icon f0f6
     "*.gz NON B_GRY3 CLC "             #x icon f0f6
+    "*.bz2 NON B_GRY3 CLC "            #x icon f0f6
+    "*.iso NON B_GRY3 CLC "            #x icon f0f6
 
     # config files
     "*vimrc NON B_YLW2 CLC "           #x icon e615
@@ -259,7 +262,7 @@ do
     else
         ICN=""
     fi
-    
+
     if [[ "${ARR[3]}" == "CLC" ]]
     then
         # no background color
