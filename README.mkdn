@@ -121,6 +121,7 @@ Using SauceCodePro NF
     - Add option to pass in filename where data should be written to
 - Complete/cleanup readme
     - Move some of the info in readme to wiki or other file?
+- Add screenshots of what happens when using bad icons
 
 ## Done
 - Add support for disabling icons
