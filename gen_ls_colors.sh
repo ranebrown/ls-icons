@@ -211,13 +211,13 @@ COLORS=(
     "*.cmd NON B_RED2 CLC "            #x icon f120
 
     # compressed files
-    "*.tar NON B_GRY3 CLC "            #x icon f0f6
-    "*.xz NON B_GRY3 CLC "             #x icon f0f6
-    "*.zip NON B_GRY3 CLC "            #x icon f0f6
-    "*.7z NON B_GRY3 CLC "             #x icon f0f6
-    "*.gz NON B_GRY3 CLC "             #x icon f0f6
-    "*.bz2 NON B_GRY3 CLC "            #x icon f0f6
-    "*.iso NON B_GRY3 CLC "            #x icon f0f6
+    "*.tar NON B_GRY6 CLC "            #x icon f0f6
+    "*.xz NON B_GRY6 CLC "             #x icon f0f6
+    "*.zip NON B_GRY6 CLC "            #x icon f0f6
+    "*.7z NON B_GRY6 CLC "             #x icon f0f6
+    "*.gz NON B_GRY6 CLC "             #x icon f0f6
+    "*.bz2 NON B_GRY6 CLC "            #x icon f0f6
+    "*.iso NON B_GRY6 CLC "            #x icon f0f6
 
     # config files
     "*vimrc NON B_YLW2 CLC "           #x icon e615
