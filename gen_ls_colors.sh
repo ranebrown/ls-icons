@@ -4,7 +4,7 @@
 COLOR_256=false
 
 # whether or not to display icons
-ICONS=true
+ICONS=false
 
 # generate a file with LS_COLORS data
 GEN_FILE=false
