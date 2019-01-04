@@ -141,6 +141,9 @@ COLORS=(
     "*.pl NON B_WHT1 CLC "             #x icon e769
     "*.stackdump NON B_GRY7 CLC "      #x icon f6e4
     "*.json NON B_WHT1 CLC "           #x icon e60b
+    "*.rs NON B_WHT1 CLC "             #x icon e7a8
+    "*.lock NON B_GRY7 CLC 屮"          #x icon fa3c
+    "*.toml NON B_YLW3 CLC 屮"          #x icon fa3c
 
     # libraries
     "*.dll NON B_GRY6 CLC "            #x icon f830
