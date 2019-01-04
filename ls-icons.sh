@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # use 256 colors or 24 bit true color
 COLOR_256=false
