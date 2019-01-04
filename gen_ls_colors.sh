@@ -4,79 +4,82 @@
 COLOR_256=false
 
 # whether or not to display icons
-ICONS=false
+ICONS=true
 
 # generate a file with LS_COLORS data
 GEN_FILE=false
 
-# text attributes (applies to fg text)
-NON="0" # default/normal
-BLD="1" # bold
-ITL="3" # italic
-UDS="4" # underline
-BLI="5" # blinking (requires terminal setting to be on)
-REV="7" # reversed (reverse FG and BG colors)
-CON="8" # concealed (hide text)
+# shellcheck disable=SC2034
+SetColors() {
+    # text attributes (applies to fg text)
+    NON="0" # default/normal
+    BLD="1" # bold
+    ITL="3" # italic
+    UDS="4" # underline
+    BLI="5" # blinking (requires terminal setting to be on)
+    REV="7" # reversed (reverse FG and BG colors)
+    CON="8" # concealed (hide text)
 
-# foreground or background
-if [[ "$COLOR_256" == true ]]
-then
-    FG="38;5"
-    BG="48;5"
+    # foreground or background
+    if [[ "$COLOR_256" == true ]]
+    then
+        FG="38;5"
+        BG="48;5"
 
-else
-    FG="38;2"
-    BG="48;2"
+    else
+        FG="38;2"
+        BG="48;2"
 
-    # base colors (from falcon colorscheme)
-    B_RED1="178;77;54"      # rgb(178,77,54)
-    B_RED2="255;54;0"       # rgb(255,54,0)
-    B_RED3="255;142;120"    # rgb(255,142,120)
-    B_ORG1="255;118;26"     # rgb(255,118,26)
-    B_ORG2="255;176;123"    # rgb(255,176,123)
-    B_ORG3="221;207;191"    # rgb(221,207,191)
-    B_YLW1="255;197;82"     # rgb(255,197,82)
-    B_YLW2="255;211;146"    # rgb(255,211,146)
-    B_YLW3="255;232;192"    # rgb(255,232,192)
-    B_GRN1="121;140;84"     # rgb(121,140,84)
-    B_GRN2="113;142;63"     # rgb(113,142,63)
-    B_GRN3="177;191;117"    # rgb(177,191,117)
-    B_CYN1="139;204;191"    # rgb(139,204,191)
-    B_CYN2="52;191;164"     # rgb(52,191,164)
-    B_BLU1="116;126;140"    # rgb(116,126,140)
-    B_BLU2="153;164;188"    # rgb(153,164,188)
-    B_BLU3="191;218;255"    # rgb(191,218,255)
-    B_BLU4="180;180;185"    # rgb(180,180,185)
-    B_BLK1="0;0;4"          # rgb(0,0,4)
-    B_BLK2="2;2;33"         # rgb(2,2,33)
-    B_BLK3="21;21;33"       # rgb(21,21,33)
-    B_GRY1="33;33;39"       # rgb(33,33,39)
-    B_GRY2="40;40;45"       # rgb(40,40,45)
-    B_GRY3="54;54;58"       # rgb(54,54,58)
-    B_GRY4="47;47;58"       # rgb(47,47,58)
-    B_GRY5="79;79;89"       # rgb(79,79,89)
-    B_GRY6="87;87;94"       # rgb(87,87,94)
-    B_GRY7="120;120;130"    # rgb(120,120,130)
-    B_WHT1="223;223;229"    # rgb(223,223,229)
-    B_WHT2="248;248;255"    # rgb(248,248,255)
-    B_PRP1="63;58;89"       # rgb(63,58,89)
-    B_PRP2="99;81;150"      # rgb(99,81,150)
-    B_PRP3="159;151;204"    # rgb(159,151,204)
-    B_PRP4="255;95;255"     # rgb(255,95,255)
+        # base colors (from falcon colorscheme)
+        B_RED1="178;77;54"      # rgb(178,77,54)
+        B_RED2="255;54;0"       # rgb(255,54,0)
+        B_RED3="255;142;120"    # rgb(255,142,120)
+        B_ORG1="255;118;26"     # rgb(255,118,26)
+        B_ORG2="255;176;123"    # rgb(255,176,123)
+        B_ORG3="221;207;191"    # rgb(221,207,191)
+        B_YLW1="255;197;82"     # rgb(255,197,82)
+        B_YLW2="255;211;146"    # rgb(255,211,146)
+        B_YLW3="255;232;192"    # rgb(255,232,192)
+        B_GRN1="121;140;84"     # rgb(121,140,84)
+        B_GRN2="113;142;63"     # rgb(113,142,63)
+        B_GRN3="177;191;117"    # rgb(177,191,117)
+        B_CYN1="139;204;191"    # rgb(139,204,191)
+        B_CYN2="52;191;164"     # rgb(52,191,164)
+        B_BLU1="116;126;140"    # rgb(116,126,140)
+        B_BLU2="153;164;188"    # rgb(153,164,188)
+        B_BLU3="191;218;255"    # rgb(191,218,255)
+        B_BLU4="180;180;185"    # rgb(180,180,185)
+        B_BLK1="0;0;4"          # rgb(0,0,4)
+        B_BLK2="2;2;33"         # rgb(2,2,33)
+        B_BLK3="21;21;33"       # rgb(21,21,33)
+        B_GRY1="33;33;39"       # rgb(33,33,39)
+        B_GRY2="40;40;45"       # rgb(40,40,45)
+        B_GRY3="54;54;58"       # rgb(54,54,58)
+        B_GRY4="47;47;58"       # rgb(47,47,58)
+        B_GRY5="79;79;89"       # rgb(79,79,89)
+        B_GRY6="87;87;94"       # rgb(87,87,94)
+        B_GRY7="120;120;130"    # rgb(120,120,130)
+        B_WHT1="223;223;229"    # rgb(223,223,229)
+        B_WHT2="248;248;255"    # rgb(248,248,255)
+        B_PRP1="63;58;89"       # rgb(63,58,89)
+        B_PRP2="99;81;150"      # rgb(99,81,150)
+        B_PRP3="159;151;204"    # rgb(159,151,204)
+        B_PRP4="255;95;255"     # rgb(255,95,255)
 
-    # other colors
-    WORD_BLU="40;83;149"    # rgb(40,83,149)
-    EXCL_GRN="32;112;68"    # rgb(32,112,68)
-    ACCS_RED="164;54;57"    # rgb(164,54,57)
-    NOTE_PRP="123;54;118"   # rgb(123,54,118)
-    OUTL_BLU="0;111;196"    # rgb(0,111,196)
-    PWRP_ORG="209;68;36"    # rgb(209,68,36)
-    VISI_BLU="54;81;158"    # rgb(53,81,158)
-    PDF_RED="207;10;10"     # rgb(207,10,10)
-    MAPF_YLW="243;168;17"   # rgb(243,168,17)
-    VISS_PRP="134;95;197"   # rgb(134,95,197)
+        # other colors
+        WORD_BLU="40;83;149"    # rgb(40,83,149)
+        EXCL_GRN="32;112;68"    # rgb(32,112,68)
+        ACCS_RED="164;54;57"    # rgb(164,54,57)
+        NOTE_PRP="123;54;118"   # rgb(123,54,118)
+        OUTL_BLU="0;111;196"    # rgb(0,111,196)
+        PWRP_ORG="209;68;36"    # rgb(209,68,36)
+        VISI_BLU="54;81;158"    # rgb(53,81,158)
+        PDF_RED="207;10;10"     # rgb(207,10,10)
+        MAPF_YLW="243;168;17"   # rgb(243,168,17)
+        VISS_PRP="134;95;197"   # rgb(134,95,197)
 
 fi
+}
 
 # LS COLOR DEFINITIONS:
 # each line should contain the following string separated by spaces:
@@ -242,6 +245,8 @@ COLORS=(
     "*Makefile NON B_ORG1 CLC "        #x icon f0ad
 )
 
+SetColors
+
 LSC=""
 for ix in ${!COLORS[*]}
 do
@@ -258,7 +263,7 @@ do
     # turn icons on/off
     if [[ "$ICONS" == true ]]
     then
-        ICN=""${ARR[4]}" "
+        ICN="${ARR[4]} "
     else
         ICN=""
     fi
@@ -266,10 +271,10 @@ do
     if [[ "${ARR[3]}" == "CLC" ]]
     then
         # no background color
-        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$FG";"${!ARR[2]}"m"$ICN":"
+        LSC+="${ARR[0]}=\e[${!ARR[1]};${FG};${!ARR[2]}m${ICN}:"
     else
         # with background color
-        LSC+=""${ARR[0]}"=\e["${!ARR[1]}";"$FG";"${!ARR[2]}";"$BG";"${!ARR[3]}"m"$ICN":"
+        LSC+="${ARR[0]}=\e[${!ARR[1]};${FG};${!ARR[2]};${BG};${!ARR[3]}m${ICN}:"
     fi
 done
 
@@ -281,4 +286,5 @@ else
     # set LS_COLORS directly
     export LS_COLORS=""
     export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:""$LSC"
+    alias ls='lsi --color=always --group-directories-first -Nh'
 fi
