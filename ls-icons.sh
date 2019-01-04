@@ -293,6 +293,7 @@ main() {
     help() {
         echo "Useage: $0 [options]"
         echo "-i download and build coreutils with ls patch, copy to /usr/local/bin"
+        echo "-p print the current value of LS_COLORS, one item per line"
         echo
         echo "Source this script to set LS_COLORS and"
         echo "an alias to use the compiled ls with patch."
@@ -303,7 +304,7 @@ main() {
     # https://sookocheff.com/post/bash/parsing-bash-script-arguments-with-shopts/
     # leading ':' turns off default error handling
     # options that require an argument have following ':' e.g. t:
-    while getopts ":hi" opt; do
+    while getopts ":hip" opt; do
         case ${opt} in
             h )
                 # print help message
@@ -346,7 +347,18 @@ main() {
                     exit 1
                 fi
                 ;;
-            
+            p )
+                # run in a subshell, have seen this mess with color settings
+                (
+                    dircolors -b >/dev/null
+                    IFS=:
+                    for ls_color in $LS_COLORS; do
+                        color=${ls_color##*=}
+                        ext=${ls_color%%=*}
+                        printf "%b%s\e[0m\n" "${color}" "${ext}"
+                    done
+                )
+                ;;
             \? )
                 echo "Invalid option: $OPTARG" 1>&2
                 exit 1
