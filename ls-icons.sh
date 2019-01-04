@@ -289,7 +289,7 @@ else
     # set LS_COLORS directly
     export LS_COLORS=""
     export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:$LSC"
-    if command -v lsi; then
+    if command -v lsi > /dev/null 2>&1; then
         alias ls='lsi --color=always --group-directories-first -Nh'
     fi
 fi
