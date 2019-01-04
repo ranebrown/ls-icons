@@ -1,0 +1,31 @@
+--- src/ls.c	2018-06-23 20:12:51.000000000 -0600
++++ src/ls.c	2019-01-04 08:36:50.000000000 -0700
+@@ -4758,8 +4758,7 @@
+ 
+   /* Check the file's suffix only if still classified as C_FILE.  */
+   ext = NULL;
+-  if (type == C_FILE)
+-    {
++  // MOD1 - allows for coloring of specific folder or file names
+       /* Test if NAME has a recognized suffix.  */
+ 
+       len = strlen (name);
+@@ -4771,7 +4770,6 @@
+                                 ext->ext.len) == 0)
+             break;
+         }
+-    }
+ 
+   /* Adjust the color for orphaned symlinks.  */
+   if (type == C_LINK && !linkok)
+@@ -4829,6 +4827,10 @@
+   if (print_scontext)
+     len += 1 + (format == with_commas ? strlen (f->scontext) : scontext_width);
+ 
++  // MOD2 - accounts for icon + space so columns are displayed correctly
++  if (print_with_color)
++      len+=2;
++
+   len += quote_name_width (f->name, filename_quoting_options, f->quoted);
+ 
+   if (indicator_style != none)
