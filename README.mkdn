@@ -39,7 +39,7 @@ Special types:
 - ca: capability: file with capability
 
 Escape Sequence:
-- lc: left code: opening terminal code (default '\e[' - escape)
+- lc: left code: opening terminal code (default `\e[` - escape)
 - rc: right code: closing terminal code (default 'm' - end escape)
 - ec: end code: none-filename text (replaces lc+no+rc) (default undefined)
 - rs: Reset to ordinary colors (default '0')
