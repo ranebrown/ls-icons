@@ -44,6 +44,7 @@ Escape Sequence:
 - ec: end code: none-filename text (replaces lc+no+rc) (default undefined)
 - rs: Reset to ordinary colors (default '0')
 - cl: clear to end of line (not sure how this works)
+- Prints out like this: ec lc <escape color> <icon> rc <filename> ec lc rc
 
 Default Escape Sequence:<br>
 type_code is the escape sequence to define the text attribute and color.

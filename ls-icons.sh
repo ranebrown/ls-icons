@@ -117,6 +117,7 @@ COLORS=(
     "*.pem NON B_CYN1 CLC "            #x icon f084
     "*.txt NON B_BLU4 CLC "            #x icon f0f6
     "*.log NON B_GRY7 CLC "            #x icon f02d
+    "*.patch NON B_YLW3 CLC "          #x icon f440
 
     # markdown
     "*.md NON B_YLW1 CLC "             #x icon e609
@@ -250,7 +251,8 @@ COLORS=(
 
 SetColors
 
-LSC=""
+unset LS_COLORS TREE_COLORS
+LS_COLORS=""
 for ix in ${!COLORS[*]}
 do
     # separate the current string into individual elements
@@ -266,7 +268,7 @@ do
     # turn icons on/off
     if [[ "$ICONS" == true ]]
     then
-        ICN="${ARR[4]} "
+        ICN="${ARR[4]}"
     else
         ICN=""
     fi
@@ -274,21 +276,20 @@ do
     if [[ "${ARR[3]}" == "CLC" ]]
     then
         # no background color
-        LSC+="${ARR[0]}=\e[${!ARR[1]};${FG};${!ARR[2]}m${ICN}:"
+        LS_COLORS+="${ARR[0]}=${!ARR[1]};${FG};${!ARR[2]}m${ICN}:"
     else
         # with background color
-        LSC+="${ARR[0]}=\e[${!ARR[1]};${FG};${!ARR[2]};${BG};${!ARR[3]}m${ICN}:"
+        LS_COLORS+="${ARR[0]}=${!ARR[1]};${FG};${!ARR[2]};${BG};${!ARR[3]}m${ICN}:"
     fi
 done
 
 if [[ "$GEN_FILE" == true ]]
 then
     # write LS_COLORS contents to a file
-    echo "rs=:ec=\e[0m:lc=:rc=:""$LSC" > ls_colors.txt
+    echo "ec=[0m:lc=[:rc=:$LS_COLORS" > ls_colors.txt
 else
     # set LS_COLORS directly
-    export LS_COLORS=""
-    export LS_COLORS="rs=:ec=\e[0m:lc=:rc=:$LSC"
+    export LS_COLORS="ec=[0m:lc=[:rc= :$LS_COLORS"
     if command -v lsi > /dev/null 2>&1; then
         alias ls='lsi --color=always --group-directories-first -Nh'
     fi
