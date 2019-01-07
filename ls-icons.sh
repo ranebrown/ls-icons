@@ -129,9 +129,9 @@ COLORS=(
 
     # source code
     "*.c NON B_WHT1 CLC "              #x icon e61e
-    "*.h NON B_WHT1 CLC "              #x icon e61e
+    "*.h NON B_WHT1 CLC "              #x icon f0fd
     "*.cpp NON B_WHT1 CLC "            #x icon e61d
-    "*.hpp NON B_WHT1 CLC "            #x icon e61d
+    "*.hpp NON B_WHT1 CLC "            #x icon fofd
     "*.cs NON B_WHT1 CLC "             #x icon f81a
     "*.pdb NON B_GRY7 CLC "            #x icon e7a7
     "*.asm NON B_WHT1 CLC "            #x icon e753
@@ -361,7 +361,7 @@ main() {
                     for ls_color in $LS_COLORS; do
                         color=${ls_color##*=}
                         ext=${ls_color%%=*}
-                        printf "%b%s\e[0m\n" "${color}" "${ext}"
+                        printf "[%b %s[0m\n" "${color}" "${ext}"
                     done
                 )
                 ;;
