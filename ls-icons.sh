@@ -132,6 +132,8 @@ COLORS=(
     "*.h NON B_WHT1 CLC "              #x icon f0fd
     "*.cpp NON B_WHT1 CLC "            #x icon e61d
     "*.hpp NON B_WHT1 CLC "            #x icon fofd
+    "*.o NON B_GRY7 CLC "              #x icon e0cf
+    "*.d NON B_GRY7 CLC "              #x icon e0cf
     "*.cs NON B_WHT1 CLC "             #x icon f81a
     "*.pdb NON B_GRY7 CLC "            #x icon e7a7
     "*.asm NON B_WHT1 CLC "            #x icon e753
