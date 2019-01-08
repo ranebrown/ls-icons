@@ -238,7 +238,7 @@ COLORS=(
     "*.config NON B_YLW2 CLC "         #x icon e615
     "*.cfg NON B_YLW2 CLC "            #x icon e615
 
-    # file/folder name specific (requires special build of ls for folders)
+    # file/folder name specific
     "*README.md BLD B_YLW1 CLC "       #x icon e714
     "*README.mkdn BLD B_YLW1 CLC "     #x icon e714
     "*README-cn.md BLD B_YLW1 CLC "    #x icon e714
